@@ -6,7 +6,7 @@ Given a set of points, the set can be divided into two subsets (A and B) based o
 
 Furthermore, to determine whether a point is linearly separable from a point set, we can consider whether the point is located within the convex hull of the set. If the point is within the convex hull, they are not linearly separable; if the point is outside the convex hull, they are linearly separable.
 
-Finally, to determine the positional relationship between the point and the convex hull (referred to as the "original convex hull"), a simple method is used here, which is to add the point to the point set composed of the vertices of the original convex hull and check whether the convex hull of the new point set has changed. If the new convex hull is consistent with the original convex hull, then the point is located within the original convex hull; If the new convex hull changes, the point is located outside the original convex hull.
+Finally, to determine the positional relationship between _the point_ and the convex hull (referred to as the "original convex hull"), a simple method is used here, which is to add _the point_ to the point set composed of the vertices of the original convex hull and check whether the convex hull of the new point set has changed (Before that, it is necessary to determine whether _the point_ is the vertex of the original convex hull). If the new convex hull is consistent with the original convex hull, then _the point_ is located within the original convex hull; If the new convex hull changes (_the point_ becomes a new vertex), _the point_ is located outside the original convex hull.
 
 This method is not the best, but because **scipy** can help us calculate the convex hull, the program looks relatively simple.
 
